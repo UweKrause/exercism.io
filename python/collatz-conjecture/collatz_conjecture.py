@@ -17,5 +17,5 @@ def steps_recursive(step_count, number):
     if number == 1:
         return step_count
 
-    number_new = number / 2 if number % 2 == 0 else number * 3 + 1
-    return steps_recursive(step_count + 1, number_new)
+    number = number / 2 if number % 2 == 0 else number * 3 + 1
+    return steps_recursive(step_count + 1, number)
