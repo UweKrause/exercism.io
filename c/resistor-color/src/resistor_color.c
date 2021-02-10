@@ -4,12 +4,11 @@ int color_code(resistor_band_t band) {
     return band;
 }
 
-resistor_band_t colors() {
+resistor_band_t* colors() {
     
-    // just copied from the testcases for now, just to get rid of compiler errors
-    resistor_band_t expected[] = {
+    static resistor_band_t color_list[] = {
         BLACK, BROWN, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, GREY, WHITE        
     };
    
-   return *expected;
+   return color_list;
 }
