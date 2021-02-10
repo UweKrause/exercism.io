@@ -3,9 +3,7 @@
 
 int main() {
     
-    int cc = color_code(BLACK);
-    
-    resistor_band_t rb = colors();
+    int cc = color_code(ORANGE);
         
-    printf("color code: %d band: %d\n", cc, rb);
+    printf("color code: %d\n", cc);
 }
