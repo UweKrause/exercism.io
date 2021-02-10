@@ -1,9 +1,7 @@
 #include "resistor_color.h"
 
 int color_code(resistor_band_t band) {
-    
-    // dummy implementation, just to get rid of compiler errors
-    return (int) band;
+    return band;
 }
 
 resistor_band_t colors() {
