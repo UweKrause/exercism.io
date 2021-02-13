@@ -24,8 +24,8 @@ typedef struct resistor_value_t {
     unit_t unit;
 } resistor_value_t;
 
-int color_code_duo(resistor_band_t band[]);
+int color_code_duo(resistor_band_t band[static 2]);
 
-resistor_value_t color_code(resistor_band_t band[]);
+resistor_value_t color_code(resistor_band_t band[static 3]);
 
 #endif

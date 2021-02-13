@@ -7,8 +7,8 @@ int color_code(resistor_band_t band) {
 resistor_band_t* colors() {
     
     static resistor_band_t color_list[] = {
-        BLACK, BROWN, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, GREY, WHITE        
+        BLACK, BROWN, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, GREY, WHITE,
     };
-   
-   return color_list;
+    
+    return color_list;
 }

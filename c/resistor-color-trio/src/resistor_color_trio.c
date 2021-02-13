@@ -1,12 +1,12 @@
 #include "resistor_color_trio.h"
 #include <math.h>
 
-int color_code_duo(resistor_band_t band[])
+int color_code_duo(resistor_band_t band[static 2])
 {
     return band[0] * 10 + band[1];
 }
 
-resistor_value_t color_code(resistor_band_t band[])
+resistor_value_t color_code(resistor_band_t band[static 3])
 {
     int value = 0;
     unit_t unit = OHMS;
