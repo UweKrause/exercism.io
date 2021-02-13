@@ -8,15 +8,12 @@ int color_code_duo(resistor_band_t band[static 2])
 
 resistor_value_t color_code(resistor_band_t band[static 3])
 {
-    int value = 0;
+    int value = color_code_duo(band) * pow(10, band[2]);
     unit_t unit = OHMS;
     
-    value = color_code_duo(band) * pow(10, band[2]);
-    
-    //Change unit when value is 1000 or above
     if (value >= 1000) {
-        unit = KILOOHMS;
         value /= 1000;
+        unit = KILOOHMS;
     }
     
     return (resistor_value_t) {value, unit};
