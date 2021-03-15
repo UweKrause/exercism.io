@@ -3,16 +3,13 @@
 #include <stdlib.h>
 #include <math.h>
 
-int armstrong_sum(int integer);
-
+/**
+ * @param integer
+ * @return the number of digits this integer has
+ */
 int number_of_digits(int integer);
 
-/**
- * An Armstrong number is a number that is the sum of its own digits each raised to the power of the number of digits.
- *
- * @param candidate
- * @return true if armstrong number, false otherwise
- */
+
 bool is_armstrong_number(int candidate) {
 
     /*
@@ -33,13 +30,13 @@ bool is_armstrong_number(int candidate) {
 }
 
 
-int armstrong_sum(int candidate) {
+int armstrong_sum(int number) {
 
     int sum = 0;
 
-    int digits = number_of_digits(candidate);
+    int digits = number_of_digits(number);
 
-    int remaining = abs(candidate);
+    int remaining = abs(number);
     while (remaining > 0) {
         int current = remaining % 10;
         sum += pow(current, digits);
