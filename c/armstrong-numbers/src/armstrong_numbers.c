@@ -32,31 +32,28 @@ bool is_armstrong_number(int candidate) {
 
 int armstrong_sum(int number) {
 
-    int sum = 0;
+    int armstrong_sum = 0;
 
     int digits = number_of_digits(number);
 
-    int remaining = abs(number);
-    while (remaining > 0) {
+    for (int remaining = number; remaining > 0; remaining /= 10) {
         int current = remaining % 10;
-        sum += pow(current, digits);
-        remaining /= 10;
+        armstrong_sum += pow(current, digits);
     }
-    return sum;
+
+    return armstrong_sum;
 }
 
 // there already was a check for numbers smaller than 9, but I want to keep this function correct.
 int number_of_digits(int integer) {
 
-    // trivial case, early return
+    // trivial case, dont waste cpu cycles on division, early return
     if (abs(integer) <= 9) return 1;
 
     int number_of_digits = 0;
 
-    int remaining = abs(integer);
-    while (remaining > 0) {
+    for (int remaining = abs(integer); remaining > 0; remaining /= 10) {
         number_of_digits++;
-        remaining /= 10;
     }
 
     return number_of_digits;
