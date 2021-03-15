@@ -4,6 +4,7 @@
 #include <stdbool.h>
 
 bool is_armstrong_number(int candidate);
-int armstrongSum(int candidate);
+
+int armstrong_sum(int candidate);
 
 #endif
