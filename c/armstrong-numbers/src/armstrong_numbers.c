@@ -7,7 +7,7 @@
  * @param integer
  * @return the number of digits this integer has
  */
-int number_of_digits(int integer);
+static int number_of_digits(int integer);
 
 
 bool is_armstrong_number(int candidate) {
