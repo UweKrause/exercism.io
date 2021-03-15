@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include <stdbool.h>
-
 int armstrong_sum(int integer);
 
 int number_of_digits(int integer);
