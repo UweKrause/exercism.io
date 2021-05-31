@@ -9,7 +9,7 @@ defmodule RnaTranscription do
   """
   @spec to_rna([char]) :: [char]
   def to_rna(dna) do
-    Enum.map(dna, &transcribe(&1))
+    Enum.map(dna, &transcribe/1)
   end
 
   @spec transcribe(char) :: char
