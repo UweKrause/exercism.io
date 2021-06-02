@@ -7,7 +7,9 @@ defmodule Strain do
   """
   @spec keep(list :: list(any), fun :: (any -> boolean)) :: list(any)
   def keep(list, fun) do
-    Enum.filter(list, fun)
+    {keep, _discard} = Enum.split_with(list, fun)
+    keep
+
   end
 
   @doc """
@@ -18,6 +20,8 @@ defmodule Strain do
   """
   @spec discard(list :: list(any), fun :: (any -> boolean)) :: list(any)
   def discard(list, fun) do
-    Enum.reject(list, fun)
+    {_keep, discard} = Enum.split_with(list, fun)
+    discard
   end
+
 end
