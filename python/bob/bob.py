@@ -7,31 +7,39 @@ NOTHING: str = "Fine. Be that way!"
 ANYTHINGELSE: str = "Whatever."
 
 
-def response(hey_bob: str) -> str:
-    strip: str = hey_bob.strip()
+def __strip_input(func):
+    def inner(hey_bob: str) -> str:
+        return func(hey_bob.strip())
 
-    if len(strip) == 0:
+    return inner
+
+
+@__strip_input
+def response(hey_bob: str) -> str:
+    if len(hey_bob) == 0:
         return NOTHING
 
-    yelling = True
+    is_yelling = __is_yeling(hey_bob)
+    is_question = __is_question(hey_bob)
 
-    for l in strip:
-        if l in ascii_lowercase:
-            yelling = False
-            break
-
-    if yelling:
-        yelling = any(x in ascii_uppercase for x in strip)
-
-    question = strip[-1] == "?"
-
-    if yelling and question:
+    if is_yelling and is_question:
         return YELLINGQUESTION
 
-    if yelling:
+    if is_yelling:
         return YELLING
 
-    if question:
+    if is_question:
         return QUESTION
 
     return ANYTHINGELSE
+
+
+def __is_yeling(hey_bob: str) -> bool:
+    is_no_lowercase: bool = not any(letter in ascii_lowercase for letter in hey_bob)
+    is_all_uppercase: bool = any(letter in ascii_uppercase for letter in hey_bob)
+
+    return is_no_lowercase and is_all_uppercase
+
+
+def __is_question(hey_bob: str) -> bool:
+    return hey_bob[-1] == "?"
