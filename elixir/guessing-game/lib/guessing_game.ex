@@ -1,8 +1,8 @@
 defmodule GuessingGame do
   # 5. Make the response when there is no guess
   # Elixir: default argument must be defined early
-  def compare(secret_number, guess \\ :no_guess)
-  def compare(secret_number, :no_guess), do: "Make a guess"
+  def compare(_secret_number, guess \\ :no_guess)
+  def compare(_secret_number, :no_guess), do: "Make a guess"
 
   # 1. Make the response when the guess matches the secret number
   def compare(same, same), do: "Correct"
